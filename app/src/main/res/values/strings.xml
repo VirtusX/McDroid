@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">McDonalds Manager</string>
+    <string name="save_text">Save text</string>
+    <string name="ButtonText">Працюйте, падлюки!</string>
+    <string name="TextResource">Ти думав, що усе так просто? То тепер ти менеджер макдональдса!</string>
+    <string name="Hamburger">гамбургер</string>
+    <string name="Cheeseburger">чізбургер</string>
+    <string name="Fry">картопля фрі</string>
+    <string name="McNuggets">макНагетси</string>
+    <string name="OrderHamburger">Замовлено гамбургер</string>
+    <string name="OrderCheeseburger">Замовлено чізбургер</string>
+    <string name="OrderFry">Замовлена картопля фрі</string>
+    <string name="OrderMcNuggets">Замовлені МакНагетси</string>
+    <string name="Muffin">мафін</string>
+    <string name="OrderMuffin">Замовлено мафін</string>
+    <string name="InOrder">"Заказів в черзі: "</string>
+    <string name="TooManyOrders">В черзі вже хєрова туча заказів!\nЇх вже аж "</string>
+    <string name="TooManyOrders2">! Піздани їх там палкою, чи що!</string>
+    <string name="CookingSize">Хавки зроблено: "</string>
+    <string name="CooksName">Кухарка "</string>
+    <string name="CooksRest">" заїбалась та пішла покурити</string>
+    <string name="Return">" повернулась</string>
+    <string name="OrderN">\"Замовлення №</string>
+    <string name="OrdersDone">, виконано.\nЗ вас "</string>
+    <string name="Gtfo">" гривень. Ідіть нахуй\"</string>
+    <string name="Cook1">баба Люся</string>
+    <string name="Cook2">Павло Зібров</string>
+    <string name="Count">Підрахуй</string>
+    <string name="Report">Звіт</string>
+    <string name="ReportNumber">"Оброблено замовлень: "</string>
+    <string name="MoneyGet">, зароблено бабок: "</string>
+    <string name="MoneyGet2">" гривень</string>
+    <string name="Ok">\"Ці ледарі повинні працювати краще!\"</string>
+</resources>

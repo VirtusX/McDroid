@@ -13,22 +13,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/TextResource"
+        android:text="@string/textResource"
         android:textColor="@color/abc_secondary_text_material_dark"
         android:id="@+id/MainText"
         android:layout_gravity="top|center"
         android:layout_alignParentTop="true"
-        android:singleLine="false"
-        android:phoneNumber="false"
-        android:password="false"
         android:enabled="true"
-        android:autoText="false"
         android:textIsSelectable="false"
-        android:textSize="18sp"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/Start"
-        android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/Left" />
+        android:textSize="18sp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -64,11 +56,9 @@
         android:id="@+id/ClientSize"
         android:textColor="@color/abc_primary_text_material_dark"
         android:textSize="18sp"
-        android:layout_gravity="right"
+        android:layout_gravity="end"
         android:layout_alignTop="@+id/CookingSize"
-        android:layout_alignEnd="@+id/Start"
-        android:width="200dp"
-        android:layout_alignRight="@+id/Left" />
+        android:width="200dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -77,7 +67,7 @@
         android:id="@+id/CookingSize"
         android:textColor="@android:color/primary_text_dark"
         android:textSize="18sp"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
         android:width="200dp"
@@ -86,7 +76,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Count"
+        android:text="@string/count"
         android:id="@+id/Count"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"

@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static virtusx.androidstudyapplication.MainActivity.order;
+import static virtusx.androidstudyapplication.MainActivity.ordersQueue;
 
 class Client extends Thread {
 
@@ -18,39 +18,39 @@ class Client extends Thread {
 
     private final Lock lock = new ReentrantLock();
 
-    void orderHamburger(List<String> i) {
+    private void orderHamburger(List<String> i) {
         if (lock.tryLock()) {
-            i.add(sp.getString(R.string.Hamburger));
-            sp.runOnUiThread(() -> sp.doClient.setText(R.string.OrderHamburger));
+            i.add(sp.getString(R.string.hamburger));
+            sp.runOnUiThread(() -> sp.doClient.setText(R.string.orderHamburger));
         }
     }
 
-    void orderSandwich(List<String> i) {
+    private void orderSandwich(List<String> i) {
         if (lock.tryLock()) {
-            i.add(sp.getString(R.string.Cheeseburger));
-            sp.runOnUiThread(() -> sp.doClient.setText(R.string.OrderCheeseburger));
+            i.add(sp.getString(R.string.cheeseburger));
+            sp.runOnUiThread(() -> sp.doClient.setText(R.string.orderCheeseburger));
         }
     }
 
-    void orderFry(List<String> i) {
+    private void orderFry(List<String> i) {
         if (lock.tryLock()) {
-            i.add(sp.getString(R.string.Fry));
-            sp.runOnUiThread(() -> sp.doClient.setText(R.string.OrderFry));
+            i.add(sp.getString(R.string.fry));
+            sp.runOnUiThread(() -> sp.doClient.setText(R.string.orderFry));
         }
     }
 
-    void orderNuggets(List<String> i) {
+    private void orderNuggets(List<String> i) {
 
         if (lock.tryLock()) {
-            i.add(sp.getString(R.string.McNuggets));
-            sp.runOnUiThread(() -> sp.doClient.setText(R.string.OrderMcNuggets));
+            i.add(sp.getString(R.string.mcNuggets));
+            sp.runOnUiThread(() -> sp.doClient.setText(R.string.orderMcNuggets));
         }
     }
 
-    void orderMuffin(List<String> i) {
+    private void orderMuffin(List<String> i) {
         if (lock.tryLock()) {
-            i.add(sp.getString(R.string.Muffin));
-            sp.runOnUiThread(() -> sp.doClient.setText(R.string.OrderMuffin));
+            i.add(sp.getString(R.string.muffin));
+            sp.runOnUiThread(() -> sp.doClient.setText(R.string.orderMuffin));
         }
     }
 
@@ -68,25 +68,25 @@ class Client extends Thread {
                     while (sp.alive) {
                         switch (rand.nextInt(5)) {
                             case 0:
-                                this.orderHamburger(order);
+                                this.orderHamburger(ordersQueue);
                                 break;
                             case 1:
-                                this.orderSandwich(order);
+                                this.orderSandwich(ordersQueue);
                                 break;
                             case 2:
-                                this.orderFry(order);
+                                this.orderFry(ordersQueue);
                                 break;
                             case 3:
-                                this.orderNuggets(order);
+                                this.orderNuggets(ordersQueue);
                                 break;
                             case 4:
-                                this.orderMuffin(order);
+                                this.orderMuffin(ordersQueue);
                                 break;
                         }
-                        if (order.size() < 10)
-                            sp.runOnUiThread(() -> sp.doClient.setText(sp.getString(R.string.InOrder) + order.size()));
+                        if (ordersQueue.size() < 10)
+                            sp.runOnUiThread(() -> sp.doClient.setText(sp.getString(R.string.inOrder) + ordersQueue.size()+sp.getString(R.string.orders)));
                         else
-                            sp.runOnUiThread(() -> sp.doClient.setText(sp.getString(R.string.TooManyOrders) + order.size() + sp.getString(R.string.TooManyOrders2)));
+                            sp.runOnUiThread(() -> sp.doClient.setText(sp.getString(R.string.tooManyOrders) + ordersQueue.size() + sp.getString(R.string.tooManyOrders2)));
                         try {
                             Thread.sleep(7000);
                         } catch (InterruptedException e) {

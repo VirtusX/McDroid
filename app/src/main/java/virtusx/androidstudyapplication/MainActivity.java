@@ -14,12 +14,12 @@ import static java.util.Collections.synchronizedList;
 import static virtusx.androidstudyapplication.R.layout.activity_main;
 
 public class MainActivity extends AppCompatActivity {
-    TextView MainText;
+    TextView mainText;
     TextView doCook;
     TextView doCookSize;
     TextView doClient;
-    Button StartButton;
-    Button CountButton;
+    Button startButton;
+    Button countButton;
     boolean alive = true;
     int i = 0;
     double money = 0;
@@ -28,21 +28,21 @@ public class MainActivity extends AppCompatActivity {
     private Client doOrder1 = new Client(this);
     private Client doOrder2 = new Client(this);
     private Cashier doCash1 = new Cashier(this);
-    static List<String> Cooking = synchronizedList(new ArrayList<>());
-    static List<String> order = synchronizedList(new ArrayList<>());
+    static List<String> foodQueue = synchronizedList(new ArrayList<>());
+    static List<String> ordersQueue = synchronizedList(new ArrayList<>());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_main);
-        MainText = (TextView)findViewById(R.id.MainText);
+        mainText = (TextView)findViewById(R.id.MainText);
         doCook = (TextView)findViewById(R.id.CookingRest);
         doCookSize = (TextView)findViewById(R.id.CookingSize);
         doClient = (TextView)findViewById(R.id.ClientSize);
-        doCook1 = new Cook(this, getString(R.string.Cook1),1);
-        doCook2= new Cook(this, getString(R.string.Cook2),2);
-        StartButton = (Button)findViewById(R.id.Start);
-        CountButton = (Button)findViewById(R.id.Count);
+        doCook1 = new Cook(this, getString(R.string.cook1),1);
+        doCook2= new Cook(this, getString(R.string.cook2),2);
+        startButton = (Button)findViewById(R.id.Start);
+        countButton = (Button)findViewById(R.id.Count);
     }
 
 
@@ -53,23 +53,23 @@ public class MainActivity extends AppCompatActivity {
             doOrder1.start();
             doOrder2.start();
             doCash1.start();
-            CountButton.setVisibility(View.VISIBLE);
-            CountButton.setEnabled(true);
-            StartButton.setVisibility(View.INVISIBLE);
+            countButton.setVisibility(View.VISIBLE);
+            countButton.setEnabled(true);
+            startButton.setVisibility(View.INVISIBLE);
         }
         catch (Exception ex)
         {
             System.out.print(ex.toString());
         }
-    }
+    } 
 
     public void CountClick(View view) {
         alive = false;
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle(R.string.Report)
-                .setMessage(getString(R.string.ReportNumber) + i + getString(R.string.MoneyGet) + money + getString(R.string.MoneyGet2))
+        builder.setTitle(R.string.report)
+                .setMessage(getString(R.string.reportNumber) + i + getString(R.string.moneyGet) + money + getString(R.string.moneyGet2))
                 .setCancelable(false)
-                .setNegativeButton(R.string.Ok,
+                .setNegativeButton(R.string.ok,
                         (dialog, id) -> {
                             alive = true;
                             dialog.cancel();
